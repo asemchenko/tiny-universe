@@ -6,6 +6,14 @@
     <e p="C:\Users\asem\UnityProjects\Tiny_university\src" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="EnergyResourceScript.cs" t="Include" />
+        <e p="FollowMousePosition.cs" t="Include" />
+        <e p="PauseMenuManager.cs" t="Include" />
+        <e p="ResourceManager.cs" t="Include" />
+        <e p="ResourceTooltip.cs" t="Include" />
+        <e p="SpaceResourceScript.cs" t="Include" />
+        <e p="SubstanceResource.cs" t="Include" />
+        <e p="TimeResouceScript.cs" t="Include" />
         <e p="UIManager.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive" />
