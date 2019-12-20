@@ -13,7 +13,6 @@
         <e p="ResourceTooltip.cs" t="Include" />
         <e p="SpaceResourceScript.cs" t="Include" />
         <e p="SubstanceResource.cs" t="Include" />
-        <e p="SubstanceResourceScript.cs" t="Include" />
         <e p="TimeResouceScript.cs" t="Include" />
         <e p="UIManager.cs" t="Include" />
       </e>
