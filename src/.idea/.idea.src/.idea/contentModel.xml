@@ -10,6 +10,7 @@
         <e p="EnergyResourceScript.cs" t="Include" />
         <e p="FollowMousePosition.cs" t="Include" />
         <e p="KernelEventHandler.cs" t="Include" />
+        <e p="ListItemController.cs" t="Include" />
         <e p="MenuManager.cs" t="Include" />
         <e p="model" t="Include">
           <e p="Energy.cs" t="Include" />

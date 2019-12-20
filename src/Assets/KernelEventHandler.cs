@@ -8,7 +8,7 @@ public class KernelEventHandler : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         Debug.Log("Clicked on kernel!");
-        var menuManager = GameObject.Find("MenuManager").GetComponent<MenuManager>();
+        var menuManager = GameObject.Find("PauseMenuManager").GetComponent<PauseMenuManager>();
         menuManager.OpenCraftMenu();
     }
 }

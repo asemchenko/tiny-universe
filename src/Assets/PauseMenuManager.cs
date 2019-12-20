@@ -6,12 +6,16 @@ using UnityEngine.SceneManagement;
 public class PauseMenuManager : MonoBehaviour
 {
     private bool _paused;
+    private bool _craftMenuOpened;
     public GameObject pauseMenuUi;
+    public GameObject craftMenu;
     // Start is called before the first frame update
     public void Start()
     {
         _paused = false;
         pauseMenuUi.SetActive(false);
+        _craftMenuOpened = false;
+        craftMenu.SetActive(false);
         Debug.Log("PauseMenuManager initialization finished");
     }
 
@@ -20,7 +24,11 @@ public class PauseMenuManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (!_paused)
+            if (_craftMenuOpened)
+            {
+                CloseCraftMenu();
+            }
+            else if (!_paused)
             {
                 Pause();
             }
@@ -61,5 +69,17 @@ public class PauseMenuManager : MonoBehaviour
     public void Exit()
     {
         Application.Quit();
+    }
+    
+    public void OpenCraftMenu()
+    {
+        _craftMenuOpened = true;
+        craftMenu.SetActive(true);
+    }
+
+    public void CloseCraftMenu()
+    {
+        craftMenu.SetActive(false);
+        _craftMenuOpened = false;
     }
 }
