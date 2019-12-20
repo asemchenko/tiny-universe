@@ -22,7 +22,10 @@
         </e>
         <e p="PauseMenuManager.cs" t="Include" />
         <e p="ResourceListControllers" t="Include">
+          <e p="CraftListController.cs" t="Include" />
+          <e p="CraftResultListController.cs" t="Include" />
           <e p="InventaryListController.cs" t="Include" />
+          <e p="ReceiptListController.cs" t="Include" />
         </e>
         <e p="ResourceManager.cs" t="Include" />
         <e p="ResourceTooltip.cs" t="Include" />
