@@ -9,6 +9,8 @@ public class PauseMenuManager : MonoBehaviour
     private bool _craftMenuOpened;
     public GameObject pauseMenuUi;
     public GameObject craftMenu;
+    public ResourceManager resourceManager;
+    private CraftMenuController _craftMenuController;
     // Start is called before the first frame update
     public void Start()
     {
@@ -16,6 +18,7 @@ public class PauseMenuManager : MonoBehaviour
         pauseMenuUi.SetActive(false);
         _craftMenuOpened = false;
         craftMenu.SetActive(false);
+        _craftMenuController = craftMenu.GetComponent<CraftMenuController>();
         Debug.Log("PauseMenuManager initialization finished");
     }
 
@@ -75,6 +78,8 @@ public class PauseMenuManager : MonoBehaviour
     {
         _craftMenuOpened = true;
         craftMenu.SetActive(true);
+        Debug.Log("Setting inventary resources from PauseMenuManager...");
+        _craftMenuController.setInventaryResources(resourceManager.getAvailableResources());
     }
 
     public void CloseCraftMenu()

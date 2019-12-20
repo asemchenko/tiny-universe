@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using System.Linq;
+using model;
+using UnityEngine;
 using UnityEngine.UI;
 
 /**
@@ -10,7 +13,9 @@ public class ResourceManager : MonoBehaviour
     private long _energyResourceAmount;
     private long _spaceResourceAmount;
     private long _substanceResourceAmount;
+
     private long _timeResourcesAmount;
+
     // resource view pointers
     public Text energyResourceText;
     public Text spaceResourceText;
@@ -66,6 +71,18 @@ public class ResourceManager : MonoBehaviour
         SpaceResourceAmount = 200;
         SubstanceResourceAmount = 400;
         EnergyResourceAmount = 100;
+    }
+
+    public List<IResource> getAvailableResources()
+    {
+        var resources = new List<IResource>();
+        resources.Add(new Energy(_energyResourceAmount));
+        resources.Add(new model.Space(_spaceResourceAmount));
+        resources.Add(new Substance(_substanceResourceAmount));
+        resources.Add(new model.Time(_timeResourcesAmount));
+        Debug.Log("Getting available resources: " + resources);
+        Debug.Log("Available resources size: " + resources.Count);
+        return resources;
     }
 
     // Update is called once per frame

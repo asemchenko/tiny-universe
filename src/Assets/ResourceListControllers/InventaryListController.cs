@@ -1,6 +1,8 @@
-﻿namespace ResourceListControllers
+﻿using model;
+
+namespace ResourceListControllers
 {
-    public class InventaryListController: ListItemController
+    public class InventaryListController: ListController
     {
         
     }
