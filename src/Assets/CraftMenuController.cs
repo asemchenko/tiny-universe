@@ -7,14 +7,12 @@ using UnityEngine;
 
 public class CraftMenuController : MonoBehaviour
 {
-    public GameObject inventaryListManager;
-    private InventaryListController _inventaryListController;
+    public InventaryListController _inventaryListController;
     public GameObject craftListManager;
     private CraftListController _craftListController;
 
     public void Start()
     {
-        _inventaryListController = inventaryListManager.GetComponent<InventaryListController>();
         _craftListController = craftListManager.GetComponent<CraftListController>();
     }
 
