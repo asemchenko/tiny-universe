@@ -6,9 +6,27 @@
     <e p="C:\Users\asem\UnityProjects\Tiny_university\src" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="CraftMenuController.cs" t="Include" />
         <e p="EnergyResourceScript.cs" t="Include" />
         <e p="FollowMousePosition.cs" t="Include" />
+        <e p="KernelEventHandler.cs" t="Include" />
+        <e p="ListItemController.cs" t="Include" />
+        <e p="MenuManager.cs" t="Include" />
+        <e p="model" t="Include">
+          <e p="Energy.cs" t="Include" />
+          <e p="IResource.cs" t="Include" />
+          <e p="ListController.cs" t="Include" />
+          <e p="Space.cs" t="Include" />
+          <e p="Substance.cs" t="Include" />
+          <e p="Time.cs" t="Include" />
+        </e>
         <e p="PauseMenuManager.cs" t="Include" />
+        <e p="ResourceListControllers" t="Include">
+          <e p="CraftListController.cs" t="Include" />
+          <e p="CraftResultListController.cs" t="Include" />
+          <e p="InventaryListController.cs" t="Include" />
+          <e p="ReceiptListController.cs" t="Include" />
+        </e>
         <e p="ResourceManager.cs" t="Include" />
         <e p="ResourceTooltip.cs" t="Include" />
         <e p="SpaceResourceScript.cs" t="Include" />

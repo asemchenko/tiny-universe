@@ -6,12 +6,19 @@ using UnityEngine.SceneManagement;
 public class PauseMenuManager : MonoBehaviour
 {
     private bool _paused;
+    private bool _craftMenuOpened;
     public GameObject pauseMenuUi;
+    public GameObject craftMenu;
+    public ResourceManager resourceManager;
+    private CraftMenuController _craftMenuController;
     // Start is called before the first frame update
     public void Start()
     {
         _paused = false;
         pauseMenuUi.SetActive(false);
+        _craftMenuOpened = false;
+        craftMenu.SetActive(false);
+        _craftMenuController = craftMenu.GetComponent<CraftMenuController>();
         Debug.Log("PauseMenuManager initialization finished");
     }
 
@@ -20,7 +27,12 @@ public class PauseMenuManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (!_paused)
+            if (_craftMenuOpened)
+            {
+                CloseCraftMenu();
+                StartCoroutine(waiter());
+            }
+            else if (!_paused)
             {
                 Pause();
             }
@@ -42,9 +54,9 @@ public class PauseMenuManager : MonoBehaviour
 
     public void Resume()
     {
+        _paused = false;
         Debug.Log("Start game resume");
         Time.timeScale = 1f;
-        _paused = false;
         pauseMenuUi.SetActive(false);
         Debug.Log("Game resumed");
     }
@@ -61,5 +73,34 @@ public class PauseMenuManager : MonoBehaviour
     public void Exit()
     {
         Application.Quit();
+    }
+    
+    public void OpenCraftMenu()
+    {
+        _craftMenuOpened = true;
+        craftMenu.SetActive(true);
+        Debug.Log("Setting inventary resources from PauseMenuManager...");
+        _craftMenuController.setInventaryResources(resourceManager.getAvailableResources());
+    }
+
+    public void CloseCraftMenu()
+    {
+        craftMenu.SetActive(false);
+        _craftMenuOpened = false;
+    }
+    
+    IEnumerator waiter()
+    {
+        //Rotate 90 deg
+        transform.Rotate(new Vector3(90, 0, 0), Space.World);
+
+        //Wait for 4 seconds
+        yield return new WaitForSeconds(1);
+
+        //Rotate 40 deg
+        transform.Rotate(new Vector3(40, 0, 0), Space.World);
+        
+        //Rotate 20 deg
+        transform.Rotate(new Vector3(20, 0, 0), Space.World);
     }
 }
