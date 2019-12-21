@@ -30,6 +30,7 @@ public class PauseMenuManager : MonoBehaviour
             if (_craftMenuOpened)
             {
                 CloseCraftMenu();
+                StartCoroutine(waiter());
             }
             else if (!_paused)
             {
@@ -53,9 +54,9 @@ public class PauseMenuManager : MonoBehaviour
 
     public void Resume()
     {
+        _paused = false;
         Debug.Log("Start game resume");
         Time.timeScale = 1f;
-        _paused = false;
         pauseMenuUi.SetActive(false);
         Debug.Log("Game resumed");
     }
@@ -86,5 +87,20 @@ public class PauseMenuManager : MonoBehaviour
     {
         craftMenu.SetActive(false);
         _craftMenuOpened = false;
+    }
+    
+    IEnumerator waiter()
+    {
+        //Rotate 90 deg
+        transform.Rotate(new Vector3(90, 0, 0), Space.World);
+
+        //Wait for 4 seconds
+        yield return new WaitForSeconds(1);
+
+        //Rotate 40 deg
+        transform.Rotate(new Vector3(40, 0, 0), Space.World);
+        
+        //Rotate 20 deg
+        transform.Rotate(new Vector3(20, 0, 0), Space.World);
     }
 }
