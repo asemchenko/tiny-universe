@@ -70,7 +70,7 @@ public class ResourceManager : MonoBehaviour
         TimeResourceAmount = 300;
         SpaceResourceAmount = 200;
         SubstanceResourceAmount = 400;
-        EnergyResourceAmount = 100;
+        EnergyResourceAmount = 1;
     }
 
     public List<IResource> getAvailableResources()

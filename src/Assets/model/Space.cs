@@ -38,5 +38,10 @@
         {
             _amount -= diff;
         }
+
+        public IResource GetOneUnit()
+        {
+            return new Space(1);
+        }
     }
 }

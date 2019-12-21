@@ -38,5 +38,10 @@
         {
             return _amount;
         }
+
+        public IResource GetOneUnit()
+        {
+            return new Time(1);
+        }
     }
 }

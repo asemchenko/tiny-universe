@@ -38,5 +38,10 @@
         {
             _amount -= diff;
         }
+
+        public IResource GetOneUnit()
+        {
+            return new Energy(1);
+        }
     }
 }

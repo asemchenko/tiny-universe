@@ -8,5 +8,6 @@
         bool IsEmpty();
         void IncreaseAmount(long diff);
         void DecreaseAmount(long diff);
+        IResource GetOneUnit();
     }
 }
