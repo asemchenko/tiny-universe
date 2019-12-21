@@ -1,8 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using model;
 using UnityEngine;
 using UnityEngine.UI;
+using Space = model.Space;
+using Time = model.Time;
 
 /**
  * This script is used to manage resource. All resources should be updated only via this script, not directly!
@@ -45,7 +48,7 @@ public class ResourceManager : MonoBehaviour
 
     public long SubstanceResourceAmount
     {
-        get => _spaceResourceAmount;
+        get => _substanceResourceAmount;
         set
         {
             substanceResourceText.text = value.ToString();
@@ -83,6 +86,51 @@ public class ResourceManager : MonoBehaviour
         Debug.Log("Getting available resources: " + resources);
         Debug.Log("Available resources size: " + resources.Count);
         return resources;
+    }
+
+    public void wasteResources(List<IResource> resourcesToBeWasted)
+    {
+        foreach (var resource in resourcesToBeWasted)
+        {
+            wasteResource(resource);
+        }
+    }
+
+    public void wasteResource(IResource resource)
+    {
+        Debug.Log("Wasting resource: " + resource.GetResourceName() + " " + resource.GetResourceAmount().ToString());
+        var type = resource.GetType();
+        if (type.Equals(typeof(Time)))
+        {
+            TimeResourceAmount = TimeResourceAmount - resource.GetResourceAmount();
+        } else if (type.Equals(typeof(Space)))
+        {
+            SpaceResourceAmount = SpaceResourceAmount - resource.GetResourceAmount();
+        } else if (type.Equals(typeof(Substance)))
+        {
+            SubstanceResourceAmount = SubstanceResourceAmount - resource.GetResourceAmount();
+        } else if (type.Equals(typeof(Energy)))
+        {
+            EnergyResourceAmount = EnergyResourceAmount - resource.GetResourceAmount();
+        }
+    }
+
+    public void addResource(IResource resource)
+    {
+        var type = resource.GetType();
+        if (type.Equals(typeof(Time)))
+        {
+            TimeResourceAmount = TimeResourceAmount + resource.GetResourceAmount();
+        } else if (type.Equals(typeof(Space)))
+        {
+            SpaceResourceAmount = SpaceResourceAmount + resource.GetResourceAmount();
+        } else if (type.Equals(typeof(Substance)))
+        {
+            SubstanceResourceAmount = SubstanceResourceAmount + resource.GetResourceAmount();
+        } else if (type.Equals(typeof(Energy)))
+        {
+            EnergyResourceAmount = EnergyResourceAmount + resource.GetResourceAmount();
+        }
     }
 
     // Update is called once per frame

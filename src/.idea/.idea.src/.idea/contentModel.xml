@@ -13,10 +13,14 @@
         <e p="ListItemController.cs" t="Include" />
         <e p="MenuManager.cs" t="Include" />
         <e p="model" t="Include">
+          <e p="Crafter.cs" t="Include" />
           <e p="Energy.cs" t="Include" />
+          <e p="Galaxy.cs" t="Include" />
+          <e p="Helium.cs" t="Include" />
           <e p="IResource.cs" t="Include" />
           <e p="ListController.cs" t="Include" />
           <e p="Space.cs" t="Include" />
+          <e p="Star.cs" t="Include" />
           <e p="Substance.cs" t="Include" />
           <e p="Time.cs" t="Include" />
         </e>
