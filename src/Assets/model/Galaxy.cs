@@ -2,53 +2,47 @@
 
 namespace model
 {
-    public class Time : IResource
+    public class Galaxy: IResource
     {
-        public Time(long amount)
-        {
-            _amount = amount;
-        }
-
-        private long _amount;
-
         public string GetResourceName()
         {
-            return "Время"; // TODO make special constant for messages instead of hardcode
+            return "Галактика";
         }
 
         public string GetResourceDescription()
         {
-            return "Форма протекания физических и психических процессов, условие возможности изменения";
-        }
-
-        public bool IsEmpty()
-        {
-            return _amount == 0;
-        }
-
-        public void IncreaseAmount(long diff)
-        {
-            _amount += diff;
-        }
-
-        public void DecreaseAmount(long diff)
-        {
-            _amount -= diff;
+            return
+                "Гравитационно-связанная система из звёзд, звёздных скоплений, межзвёздного газа и пыли, тёмной материи, планет";
         }
 
         public long GetResourceAmount()
         {
-            return _amount;
+            return 1L;
+        }
+
+        public bool IsEmpty()
+        {
+            return false;
+        }
+
+        public void IncreaseAmount(long diff)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void DecreaseAmount(long diff)
+        {
+            throw new System.NotImplementedException();
         }
 
         public IResource GetOneUnit()
         {
-            return new Time(1);
+            return this;
         }
 
-        protected bool Equals(Time other)
+        protected bool Equals(Galaxy other)
         {
-            return _amount == other._amount;
+            return true;
         }
 
         public override bool Equals(object obj)
@@ -56,12 +50,12 @@ namespace model
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
             if (obj.GetType() != this.GetType()) return false;
-            return Equals((Time) obj);
+            return Equals((Galaxy) obj);
         }
 
         public override int GetHashCode()
         {
-            return _amount.GetHashCode();
+            return 1;
         }
         public bool Equals(IResource x, IResource y)
         {
