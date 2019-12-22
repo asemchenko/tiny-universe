@@ -24,6 +24,14 @@
           <e p="Substance.cs" t="Include" />
           <e p="Time.cs" t="Include" />
         </e>
+        <e p="Objects" t="Include">
+          <e p="CreateObject.cs" t="Include" />
+          <e p="CreateScene.cs" t="Include" />
+          <e p="ElipseMove.cs" t="Include" />
+          <e p="GoToGalaxy.cs" t="Include" />
+          <e p="GoToStarSystem.cs" t="Include" />
+          <e p="MoveObject.cs" t="Include" />
+        </e>
         <e p="PauseMenuManager.cs" t="Include" />
         <e p="ResourceListControllers" t="Include">
           <e p="CraftListController.cs" t="Include" />

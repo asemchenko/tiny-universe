@@ -88,6 +88,7 @@ public class CraftMenuController : MonoBehaviour
 
     public void afterMoveEvent()
     {
+        crafter = new Crafter();
         Debug.Log("Checking if craft is possible...");
         if (_CraftResultListController.isEmpty())
         {

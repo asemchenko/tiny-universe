@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3188955779555999375}
   - component: {fileID: 3188955779555999374}
   - component: {fileID: -5317400853598478552}
+  - component: {fileID: 133328162084309700}
   m_Layer: 0
   m_Name: BlueStar
   m_TagString: Untagged
@@ -58,7 +59,6 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -117,3 +117,15 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &133328162084309700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3188955779555999473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab40ac86e22fa5e46996f6c43213ec4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
