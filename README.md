@@ -3,3 +3,5 @@
 
 
 #### Бинарники стабильных версий игры можно найти в [релизах](https://github.com/asemchenko/tiny-universe/releases)
+
+### Как собрать релиз можно найти в [документации](https://github.com/asemchenko/tiny-universe/tree/master/docs)
