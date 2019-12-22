@@ -70,10 +70,10 @@ public class ResourceManager : MonoBehaviour
     public void Start()
     {
         Debug.Log("Initializing resources");
-        TimeResourceAmount = 300;
-        SpaceResourceAmount = 200;
-        SubstanceResourceAmount = 400;
-        EnergyResourceAmount = 1;
+        TimeResourceAmount = 10;
+        SpaceResourceAmount = 10;
+        SubstanceResourceAmount = 0;
+        EnergyResourceAmount = 0;
     }
 
     public List<IResource> getAvailableResources()

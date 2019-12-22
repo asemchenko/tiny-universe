@@ -20,9 +20,14 @@ namespace ResourceListControllers
                 {
                     PauseMenuManager.CloseCraftMenu();
                     GameObject result = Instantiate(prefab, new Vector3(5, 0, 0), Quaternion.identity) as GameObject;
-                    result.GetComponent<MeshRenderer>().sortingOrder = 2;
-                    // TODO remove resource from craft panel here and close craft panel
+                    result.GetComponent<SpriteRenderer>().sortingOrder = 2;
+                    clear();
                 }));
+            } else if (type.Equals(typeof(Star)))
+            {
+                PauseMenuManager.CloseCraftMenu();
+                // TODO Luda instantiate star here and call API method to put it
+                clear();
             }
             else
             {

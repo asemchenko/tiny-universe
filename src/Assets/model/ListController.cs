@@ -17,6 +17,11 @@ namespace model
 
         public void appendResource(IResource resource)
         {
+            // if there is no resource - doing nothing
+            if (resource.IsEmpty())
+            {
+                return;
+            }
             // first of all - check that such resource does not exist
             foreach (var resourceDescriptor in _resources)
             {
