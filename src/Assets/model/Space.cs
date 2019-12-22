@@ -1,4 +1,6 @@
-﻿namespace model
+﻿using System.Collections.Generic;
+
+namespace model
 {
     public class Space : IResource
     {
@@ -42,6 +44,34 @@
         public IResource GetOneUnit()
         {
             return new Space(1);
+        }
+
+
+        protected bool Equals(Space other)
+        {
+            return _amount == other._amount;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (ReferenceEquals(null, obj)) return false;
+            if (ReferenceEquals(this, obj)) return true;
+            if (obj.GetType() != this.GetType()) return false;
+            return Equals((Space) obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return _amount.GetHashCode();
+        }
+        public bool Equals(IResource x, IResource y)
+        {
+            return AmountEqualityComparer.Equals(x, y);
+        }
+
+        public int GetHashCode(IResource obj)
+        {
+            return AmountEqualityComparer.GetHashCode(obj);
         }
     }
 }

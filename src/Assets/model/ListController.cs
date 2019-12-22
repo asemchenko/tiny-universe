@@ -33,6 +33,31 @@ namespace model
             insertNewItem(resource);
         }
 
+        public void clear()
+        {
+            foreach (var resourceDescriptor in _resources)
+            {
+                Destroy(resourceDescriptor.resourceObject);
+            }
+            _resources.Clear();
+        }
+
+        public bool isEmpty()
+        {
+            return _resources.Count == 0;
+        }
+
+        public List<IResource> getIResources()
+        {
+            var ireResources = new List<IResource>();
+            foreach (var resourceDescriptor in _resources)
+            {
+                ireResources.Add(resourceDescriptor.resource);
+            }
+
+            return ireResources;
+        }
+
         public bool DecrementResource(ResourceDescriptor descriptor)
         {
             var resourceAmount = descriptor.resource.GetResourceAmount();
