@@ -22,7 +22,7 @@ public class MoveObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 Cursor = Input.mousePosition;
+        /*Vector3 Cursor = Input.mousePosition;
         
         Cursor = Camera.main.ScreenToWorldPoint(Cursor);
         Cursor.z = 0;
@@ -31,6 +31,6 @@ public class MoveObject : MonoBehaviour
         {
             this.transform.position = Cursor;
 
-        }
+        }*/
     }
 }

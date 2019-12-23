@@ -104,6 +104,7 @@ namespace model
             onItemInserted(descriptor);
             // stub for fix unity displaying bug
             controller.resourceAmountText.text = resource.GetResourceAmount().ToString();
+            controller.descriptor = descriptor;
             return descriptor;
         }
 
