@@ -14,16 +14,16 @@ namespace ResourceListControllers
             var button = descriptor.controller.button;
             Debug.Log("Creating onClick listener for an craft result resource: ");
             var type = descriptor.resource.GetType();
-            if (type.Equals(typeof(Star)) || type.Equals(typeof(Galaxy)))
+            if (type ==(typeof(Galaxy)))
             {
                 button.onClick.AddListener((() =>
                 {
                     PauseMenuManager.CloseCraftMenu();
-                    GameObject result = Instantiate(prefab, new Vector3(5, 0, 0), Quaternion.identity) as GameObject;
+                    var result = Instantiate(prefab, new Vector3(5, 0, 0), Quaternion.identity) as GameObject;
                     result.GetComponent<SpriteRenderer>().sortingOrder = 2;
                     clear();
                 }));
-            } else if (type.Equals(typeof(Star)))
+            } else if (type == (typeof(Star)))
             {
                 PauseMenuManager.CloseCraftMenu();
                 // TODO Luda instantiate star here and call API method to put it

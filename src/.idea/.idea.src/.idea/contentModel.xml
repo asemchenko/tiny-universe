@@ -45,6 +45,9 @@
           <e p="Galaxy" t="Include">
             <e p="GalaxySceneManager.cs" t="Include" />
           </e>
+          <e p="MainScene" t="Include">
+            <e p="InstantiatingApi.cs" t="Include" />
+          </e>
         </e>
         <e p="SpaceResourceScript.cs" t="Include" />
         <e p="SubstanceResource.cs" t="Include" />
@@ -52,6 +55,7 @@
         <e p="ToolTipScripts" t="Include">
           <e p="AbstractTooltipScript.cs" t="Include" />
           <e p="GalaxyCenterTooltipScript.cs" t="Include" />
+          <e p="GalaxyTooltipScript.cs" t="Include" />
           <e p="KernelTooltipScript.cs" t="Include" />
           <e p="ResourceTooltipScript.cs" t="Include" />
         </e>

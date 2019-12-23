@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using MainScene;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,9 +12,12 @@ public class PauseMenuManager : MonoBehaviour
     public GameObject craftMenu;
     public ResourceManager resourceManager;
     private CraftMenuController _craftMenuController;
+
+    public InstantiatingApi InstantiatingApi;
     // Start is called before the first frame update
     public void Start()
     {
+        createDefaultGalaxy();
         _paused = false;
         pauseMenuUi.SetActive(false);
         _craftMenuOpened = false;
@@ -30,7 +34,6 @@ public class PauseMenuManager : MonoBehaviour
             if (_craftMenuOpened)
             {
                 CloseCraftMenu();
-                StartCoroutine(waiter());
             }
             else if (!_paused)
             {
@@ -88,19 +91,12 @@ public class PauseMenuManager : MonoBehaviour
         craftMenu.SetActive(false);
         _craftMenuOpened = false;
     }
-    
-    IEnumerator waiter()
+
+    /**
+     * Creates default galaxy and puts it on the scene
+     */
+    public void createDefaultGalaxy()
     {
-        //Rotate 90 deg
-        transform.Rotate(new Vector3(90, 0, 0), Space.World);
-
-        //Wait for 4 seconds
-        yield return new WaitForSeconds(1);
-
-        //Rotate 40 deg
-        transform.Rotate(new Vector3(40, 0, 0), Space.World);
-        
-        //Rotate 20 deg
-        transform.Rotate(new Vector3(20, 0, 0), Space.World);
+        InstantiatingApi.CreateGalaxy();
     }
 }
