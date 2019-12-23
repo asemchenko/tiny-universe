@@ -55,6 +55,7 @@
         <e p="ToolTipScripts" t="Include">
           <e p="AbstractTooltipScript.cs" t="Include" />
           <e p="GalaxyCenterTooltipScript.cs" t="Include" />
+          <e p="GalaxyTooltipScript.cs" t="Include" />
           <e p="KernelTooltipScript.cs" t="Include" />
           <e p="ResourceTooltipScript.cs" t="Include" />
         </e>
