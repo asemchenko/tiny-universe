@@ -26,7 +26,7 @@ namespace model
                 craftMap.Add(new HashSet<IResource>(s2), new Substance(1));
                 // substance + time = energy
                 IResource[] s3 = {new Time(1), new Substance(1),};
-                craftMap.Add(new HashSet<IResource>(s2), new Energy(1));
+                craftMap.Add(new HashSet<IResource>(s3), new Energy(1));
                 // substance + energy = H2
                 IResource[] s4 = {new Substance(1), new Energy(1),};
                 craftMap.Add(new HashSet<IResource>(s4), new Helium(1));

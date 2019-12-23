@@ -17,6 +17,11 @@ namespace model
 
         public void appendResource(IResource resource)
         {
+            // if there is no resource - doing nothing
+            if (resource.IsEmpty())
+            {
+                return;
+            }
             // first of all - check that such resource does not exist
             foreach (var resourceDescriptor in _resources)
             {
@@ -99,6 +104,7 @@ namespace model
             onItemInserted(descriptor);
             // stub for fix unity displaying bug
             controller.resourceAmountText.text = resource.GetResourceAmount().ToString();
+            controller.descriptor = descriptor;
             return descriptor;
         }
 

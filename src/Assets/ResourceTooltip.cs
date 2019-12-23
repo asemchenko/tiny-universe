@@ -11,7 +11,8 @@ public class ResourceTooltip : MonoBehaviour
     private void Start()
     {
         Debug.Log("Initializing tooltip");
-        tooltipImage.gameObject.SetActive(false);    
+        tooltipImage.gameObject.SetActive(false);
+        HideToolTip();
     }
 
     public void GenerateToolTip(string title ,string text)

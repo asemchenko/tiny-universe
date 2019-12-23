@@ -41,9 +41,20 @@
         </e>
         <e p="ResourceManager.cs" t="Include" />
         <e p="ResourceTooltip.cs" t="Include" />
+        <e p="SceneScripts" t="Include">
+          <e p="Galaxy" t="Include">
+            <e p="GalaxySceneManager.cs" t="Include" />
+          </e>
+        </e>
         <e p="SpaceResourceScript.cs" t="Include" />
         <e p="SubstanceResource.cs" t="Include" />
         <e p="TimeResouceScript.cs" t="Include" />
+        <e p="ToolTipScripts" t="Include">
+          <e p="AbstractTooltipScript.cs" t="Include" />
+          <e p="GalaxyCenterTooltipScript.cs" t="Include" />
+          <e p="KernelTooltipScript.cs" t="Include" />
+          <e p="ResourceTooltipScript.cs" t="Include" />
+        </e>
         <e p="UIManager.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive" />
