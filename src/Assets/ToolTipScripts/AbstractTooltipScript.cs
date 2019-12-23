@@ -13,12 +13,14 @@ namespace ToolTipScripts
     {
         public void OnPointerEnter(PointerEventData eventData)
         {
+            Debug.Log("Triggered onPointerEnter from AbstractToolTipScript");
             var tooltip = GameObject.Find("ToolTipManager").GetComponent<ResourceTooltip>();
             tooltip.GenerateToolTip(getTooltipTitle(),getTooltipDescription());
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
+            Debug.Log("Triggered onPointerExit from AbstractToolTipScript");
             var tooltip = GameObject.Find("ToolTipManager").GetComponent<ResourceTooltip>();
             tooltip.HideToolTip();
         }
