@@ -19,11 +19,13 @@
           <e p="Helium.cs" t="Include" />
           <e p="IResource.cs" t="Include" />
           <e p="ListController.cs" t="Include" />
+          <e p="Planet.cs" t="Include" />
           <e p="Space.cs" t="Include" />
           <e p="Star.cs" t="Include" />
           <e p="Substance.cs" t="Include" />
           <e p="Time.cs" t="Include" />
         </e>
+        <e p="ObjectPlacementScript.cs" t="Include" />
         <e p="Objects" t="Include">
           <e p="CreateObject.cs" t="Include" />
           <e p="CreateScene.cs" t="Include" />
@@ -58,6 +60,7 @@
           <e p="GalaxyTooltipScript.cs" t="Include" />
           <e p="KernelTooltipScript.cs" t="Include" />
           <e p="ResourceTooltipScript.cs" t="Include" />
+          <e p="StarTooltipScript.cs" t="Include" />
         </e>
         <e p="UIManager.cs" t="Include" />
       </e>
