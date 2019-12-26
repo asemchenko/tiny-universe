@@ -13,6 +13,7 @@ namespace MainScene
         public GameObject galaxyPrefab;
         public GameObject starPrefab;
         public GameObject mainCanvas;
+        public GameObject planetPrefab;
 
         public void Start()
         {
@@ -36,7 +37,12 @@ namespace MainScene
 
         public void CreatePlanet()
         {
-            throw new NotImplementedException();
+            Debug.Log("Instantiating planet ...");
+            var result = Instantiate(planetPrefab, new Vector3(0, 100, 0), Quaternion.identity);
+            result.GetComponent<SpriteRenderer>().sortingOrder = 1;
+            result.transform.parent = mainCanvas.transform;
+            result.AddComponent<ObjectPlacementScript>();
+            ObjectPlacementScript.markYellowPlanetUnplaced();
         }
 
         private GameObject instantiatePrefab(GameObject prefab)
@@ -55,7 +61,11 @@ namespace MainScene
                 if (ObjectPlacementScript.unplacedObject == SpriteType.STAR)
                 {
                     CreateStar();
-                }   
+                }
+                else if (ObjectPlacementScript.unplacedObject == SpriteType.PLANET)
+                {
+                    CreatePlanet();
+                } 
             }
         }
     }

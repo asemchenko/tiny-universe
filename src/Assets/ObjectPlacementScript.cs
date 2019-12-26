@@ -20,6 +20,11 @@ public class ObjectPlacementScript : MonoBehaviour
         isPresentUnplacedObject = true;
     }
 
+    public static void markYellowPlanetUnplaced()
+    {
+        unplacedObject = SpriteType.PLANET;
+        isPresentUnplacedObject = true;
+    }
     // Update is called once per frame
     private void Update()
     {

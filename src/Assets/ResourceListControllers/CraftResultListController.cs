@@ -34,6 +34,14 @@ namespace ResourceListControllers
                     InstantiatingApi.CreateStar();
                     clear();
                 }));
+            } else if (type == (typeof(Planet)))
+            {
+                button.onClick.AddListener((() =>
+                {
+                    PauseMenuManager.CloseCraftMenu();
+                    InstantiatingApi.CreatePlanet();
+                    clear();
+                }));
             }
             else
             {
