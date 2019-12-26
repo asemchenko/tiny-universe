@@ -13,6 +13,6 @@ public class FollowMousePosition : MonoBehaviour
     void Update()
     {
         Debug.Log("Following mouse position");
-        transform.position = new Vector3(Input.mousePosition.x - 5, Input.mousePosition.y - 5);
+        transform.position = new Vector3(Input.mousePosition.x - 50, Input.mousePosition.y - 50);
     }
 }

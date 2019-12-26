@@ -2,27 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-
 using UnityEngine.SceneManagement;
+
 public class GoToStarSystem : MonoBehaviour
 
 {
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        void Update()
+        if (Input.GetMouseButtonDown(1))
         {
-            if (Input.GetMouseButtonDown(1))
-            {
-                SceneManager.LoadScene("StarSystem");
-            }
+            SceneManager.LoadScene("StarSystem");
         }
     }
 }
