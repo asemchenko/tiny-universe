@@ -33,6 +33,9 @@ namespace model
                 // Helium + energy = star
                 IResource[] s5 = {new Helium(1), new Energy(1),};
                 craftMap.Add(new HashSet<IResource>(s5), new Star());
+                // Substance + Helium = planet
+                IResource[] s6 = {new Helium(1), new Substance(1), };
+                craftMap.Add(new HashSet<IResource>(s6), new Planet());
             }
         }
 

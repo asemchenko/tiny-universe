@@ -366,6 +366,12 @@ PrefabInstance:
       propertyPath: galaxyPrefab
       value: 
       objectReference: {fileID: 1343264792}
+    - target: {fileID: 8873911833492788432, guid: 500e7cf2d02c54e458f5fd2dbb3817a3,
+        type: 3}
+      propertyPath: planetPrefab
+      value: 
+      objectReference: {fileID: 1943031133182532738, guid: afffefd4d9477c044bff40d41af66774,
+        type: 3}
     - target: {fileID: 8873911833492788433, guid: 500e7cf2d02c54e458f5fd2dbb3817a3,
         type: 3}
       propertyPath: m_LocalPosition.x
