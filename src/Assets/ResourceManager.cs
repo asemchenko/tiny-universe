@@ -72,8 +72,8 @@ public class ResourceManager : MonoBehaviour
         Debug.Log("Initializing resources");
         TimeResourceAmount = 10;
         SpaceResourceAmount = 10;
-        SubstanceResourceAmount = 10; // TODO asem make 0
-        EnergyResourceAmount = 10; // TODO asem make 0
+        SubstanceResourceAmount = 0; // TODO asem make 0
+        EnergyResourceAmount = 0; // TODO asem make 0
     }
 
     public List<IResource> getAvailableResources()
