@@ -1,51 +1,60 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace model
 {
-    public class Star: IResource
+    public class Star: SolidEntity
     {
-        public string GetResourceName()
+        public static Star createStar(List<IResource> source)
+        {
+            var star = new Star();
+            star.content = source;
+            // 300 - 600 seconds
+            star.remainLifeTime = new Random().Next(300, 600);
+            return star;
+        }
+        public override string GetResourceName()
         {
             return "Звезда";
         }
 
-        public string GetResourceDescription()
+        public override string GetResourceDescription()
         {
             return
                 "Массивный газовый шар, излучающий свет и удерживаемый в состоянии равновесия силами собственной гравитации и внутренним давлением, в недрах которого происходят реакции термоядерного синтеза.";
         }
 
-        public long GetResourceAmount()
+        public override long GetResourceAmount()
         {
             return 1L;
         }
 
-        public bool IsEmpty()
+        public override bool IsEmpty()
         {
             return false;
         }
 
-        public void IncreaseAmount(long diff)
+        public override void IncreaseAmount(long diff)
         {
             throw new System.NotImplementedException();
         }
 
-        public void DecreaseAmount(long diff)
+        public override void DecreaseAmount(long diff)
         {
             throw new System.NotImplementedException();
         }
 
-        public IResource GetOneUnit()
+        public override IResource GetOneUnit()
         {
             return this;
         }
 
-        public bool Equals(IResource x, IResource y)
+        public override bool Equals(IResource x, IResource y)
         {
             return AmountEqualityComparer.Equals(x, y);
         }
 
-        public int GetHashCode(IResource obj)
+        public override int GetHashCode(IResource obj)
         {
             return AmountEqualityComparer.GetHashCode(obj);
         }

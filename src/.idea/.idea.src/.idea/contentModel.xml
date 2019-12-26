@@ -20,6 +20,7 @@
           <e p="IResource.cs" t="Include" />
           <e p="ListController.cs" t="Include" />
           <e p="Planet.cs" t="Include" />
+          <e p="SolidEntity.cs" t="Include" />
           <e p="Space.cs" t="Include" />
           <e p="Star.cs" t="Include" />
           <e p="Substance.cs" t="Include" />

@@ -1,45 +1,55 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace model
 {
-    public class Planet: IResource
+    public class Planet : SolidEntity
     {
-        public string GetResourceName()
+        public static Planet createPlanet(List<IResource> source)
+        {
+            var planet = new Planet();
+            planet.content = source;
+            // 180 - 480 seconds
+            planet.remainLifeTime = new Random().Next(180, 480);
+            return planet;
+        }
+
+        public override string GetResourceName()
         {
             return "Планета";
         }
 
-        public string GetResourceDescription()
+        public override string GetResourceDescription()
         {
             return "Небесное тело, вращающееся вокруг звезды и получающее от него свет и тепло.";
         }
 
-        public long GetResourceAmount()
+        public override long GetResourceAmount()
         {
             return 1;
         }
 
-        public bool IsEmpty()
+        public override bool IsEmpty()
         {
             return false;
         }
 
-        public void IncreaseAmount(long diff)
+        public override void IncreaseAmount(long diff)
         {
             throw new System.NotImplementedException();
         }
 
-        public void DecreaseAmount(long diff)
+        public override void DecreaseAmount(long diff)
         {
             throw new System.NotImplementedException();
         }
 
-        public IResource GetOneUnit()
+        public override IResource GetOneUnit()
         {
             return this;
         }
 
-        public bool Equals(IResource x, IResource y)
+        public override bool Equals(IResource x, IResource y)
         {
             if (x == null && y == null)
             {
@@ -54,7 +64,7 @@ namespace model
             return false;
         }
 
-        public int GetHashCode(IResource obj)
+        public override int GetHashCode(IResource obj)
         {
             return 1;
         }
