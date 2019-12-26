@@ -1,4 +1,5 @@
-﻿using model;
+﻿using MainScene;
+using model;
 using UnityEngine;
 
 namespace ResourceListControllers
@@ -8,6 +9,7 @@ namespace ResourceListControllers
         public CraftMenuController CraftMenuController;
         public PauseMenuManager PauseMenuManager;
         public GameObject prefab;
+        public InstantiatingApi InstantiatingApi;
         protected override void onItemInserted(ResourceDescriptor descriptor)
         {
             // add onClick on resource handlers
@@ -18,6 +20,7 @@ namespace ResourceListControllers
             {
                 button.onClick.AddListener((() =>
                 {
+                    // FIXME asem [REFACTOR] replace this code with calling api-method from InstantiatingApi script
                     PauseMenuManager.CloseCraftMenu();
                     var result = Instantiate(prefab, new Vector3(5, 0, 0), Quaternion.identity) as GameObject;
                     result.GetComponent<SpriteRenderer>().sortingOrder = 2;
@@ -25,9 +28,12 @@ namespace ResourceListControllers
                 }));
             } else if (type == (typeof(Star)))
             {
-                PauseMenuManager.CloseCraftMenu();
-                // TODO Luda instantiate star here and call API method to put it
-                clear();
+                button.onClick.AddListener((() =>
+                {
+                    PauseMenuManager.CloseCraftMenu();
+                    InstantiatingApi.CreateStar();
+                    clear();
+                }));
             }
             else
             {
