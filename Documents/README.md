@@ -29,3 +29,7 @@ Comming soon...
 
 
 ## Cкріншоти
+![](./Tiny_universe_screenshot_01.png)
+![](./Tiny_universe_screenshot_02.png)
+![](./Tiny_universe_screenshot_03.png)
+![](./Tiny_universe_screenshot_04.png)
